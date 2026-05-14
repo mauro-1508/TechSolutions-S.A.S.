@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechSolutions S.A.S.</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
@@ -16,7 +18,7 @@
 
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Inicio</a></li>
+                <li><a href="index.html" id="navButton">Inicio</a></li>
                 <li><a href="#">Estudiantes</a></li>
                 <li><a href="#">Cursos</a></li>
                 <li><a href="#">Profesores</a></li>
@@ -73,10 +75,29 @@
 
     </section>
 
+    <script>
+
+        // Revisar si ya inició sesión
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        // Seleccionar botón
+        const navButton = document.getElementById("navButton");
+
+        // Cambiar a Dashboard
+        if (isLoggedIn === "true") {
+
+            navButton.innerHTML = "Dashboard";
+
+            navButton.href = "dashboard.html";
+        }
+
+    </script>
+
     <!-- FOOTER -->
     <footer>
         <p>© 2026 TechSolutions S.A.S. | Todos los derechos reservados.</p>
     </footer>
-
+ <script src="js/script.js"></script>
 </body>
+
 </html>

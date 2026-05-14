@@ -30,5 +30,18 @@ loginForm.addEventListener('submit', (e) => {
 
     // Si todo está correcto, puedes redirigir o enviar a tu API
     console.log("Validación exitosa. Redirigiendo...");
-    window.location.href = "index.html"; 
+    // GUARDAR SESIÓN
+    localStorage.setItem("isLoggedIn", "true");
+
+    // REDIRECCIONAR
+    window.location.href = "index.html";
 });
+// Revisar si el usuario inició sesión
+const isLoggedIn = localStorage.getItem("isLoggedIn");
+// Buscar el botón del navbar
+const navButton = document.getElementById("navButton");
+// Cambiar el botón a Dashboard
+if (isLoggedIn === "true" && navButton) {
+    navButton.innerHTML = "Dashboard";
+    navButton.href = "dashboard.html";
+}
